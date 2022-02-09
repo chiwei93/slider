@@ -17,6 +17,16 @@ const Start = () => {
   // time for the total page sliding animation
   const totalAnimationTime = 5000;
 
+  // for navigating to a random prize page
+  const navigateToPrizePage = useCallback(() => {
+    // generate a random number from the length of the prizes
+    const totalPrizes = prizesData.length;
+
+    const randomNumber = Math.floor(Math.random() * totalPrizes) + 1;
+
+    router.push(`/prizes/${randomNumber}`);
+  }, [router]);
+
   // for setting an interval to increase the currentSlide every 200ms
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,16 +63,6 @@ const Start = () => {
     setCurrentSlide(1);
     setPrizes([...prizesData]);
   };
-
-  // for navigating to a random prize page
-  const navigateToPrizePage = useCallback(() => {
-    // generate a random number from the length of the prizes
-    const totalPrizes = prizesData.length;
-
-    const randomNumber = Math.floor(Math.random() * totalPrizes) + 1;
-
-    router.push(`/prizes/${randomNumber}`);
-  }, [router]);
 
   // for skipping the animation
   const onSkipAnimationBtnClick = () => {
