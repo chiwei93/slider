@@ -1,0 +1,46 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  margin-bottom: 1em;
+	width: 100%;
+	text-align: center;
+}
+
+.image > img {
+	width: min(40%, 25rem);
+}
+
+.heading {
+  font-weight: bold;
+  font-size: max(2rem, 10vw);
+  margin-bottom: 0.5em;
+	font-family: walsheim-bold;
+}
+
+.subHeading {
+  font-size: max(0.9rem, 4vw);
+  margin-bottom: 3em;
+}
+
+.btnContainer {
+	position: relative;
+	text-align: center;
+	margin-bottom: 2em;
+  width: 100%;
+}
+
+.link {
+	width: min(50%, 28rem);
+	position: relative;
+}
+
+.btn {
+	width: 100%;
+}

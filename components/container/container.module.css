@@ -1,0 +1,11 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0 max(1.5rem, 10vw);
+  display: flex;
+  flex-direction: column;
+	overflow-x: hidden;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 100% 100%;
+}

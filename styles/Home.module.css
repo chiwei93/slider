@@ -1,0 +1,66 @@
+.content {
+  flex: 1;
+}
+
+.headline {
+  position: relative;
+}
+
+.headline > img {
+  width: 100%;
+}
+
+.textBold {
+  font-family: walsheim-bold;
+}
+
+.subHeading {
+  font-size: max(1.2rem, 5vw);
+  text-align: right;
+  margin-top: 4rem;
+  line-height: var(--paragraph-line-height);
+}
+
+.btnContainer {
+  margin-top: 4em;
+  text-align: right;
+}
+
+.btnStart {
+  color: var(--color-white);
+  font-size: max(1.2rem, 4.5vw);
+  background-color: var(--color-black);
+  padding: 0.5em 1em;
+  margin-left: 2em;
+  border-radius: .3em;
+}
+
+.downloadContainer {
+  margin-top: 15em;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.qrCodeContainer {
+  position: relative;
+  width: min(60%, 40rem);
+}
+
+.qrCodeContainer > img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+  .btnContainer {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .btnStart {
+    padding: 0;
+    background-color: transparent;
+    margin-top: 2.5em;
+    margin-left: 3.5em;
+  }
+}

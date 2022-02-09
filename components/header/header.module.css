@@ -1,0 +1,14 @@
+.container {
+  padding: 4em 0;
+  display: flex;
+	justify-content: center;
+}
+
+.logoContainer {
+	position: relative;
+	text-align: center;
+}
+
+.logoContainer > img {
+	width: 70%;
+}

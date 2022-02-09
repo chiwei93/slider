@@ -1,0 +1,62 @@
+.center {
+  text-align: center;
+}
+
+.heading {
+  font-size: max(1.2rem, 5vw);
+  margin-bottom: 1.5em;
+	font-family: walsheim-bold;
+	margin-top: 1em;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  font-size: max(0.8rem, 1.7vw);
+  background-color: var(--color-white);
+  padding: 1em;
+  padding-left: 2em;
+  border-radius: 0.5em;
+  width: min(100%, 60rem);
+  line-height: var(--paragraph-line-height);
+  margin-bottom: 6em;
+	counter-reset: list;
+}
+
+.list > li {
+	list-style: none;
+}
+
+.list > li:before {
+	content: counter(list) ") ";
+	counter-increment: list;
+}
+
+.list > li:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.btnContainer {
+	position: relative;
+	text-align: center;
+	margin-bottom: 4em;
+}
+
+.btnLink {
+	width: min(60%, 30rem);
+	position: relative;
+}
+
+.btnAgree {
+	width: 100%;
+}
+
+@media only screen and (min-width: 400px) {
+	.list {
+		padding: 2em;
+		padding-left: 3em;
+	}
+}
