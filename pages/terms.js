@@ -17,10 +17,10 @@ const Terms = () => {
       <div className={styles.listContainer}>
         <ol className={styles.list}>
           <li>
-            The ‘Spin the Wheel’ game and Prize Draw (“Promotion”) is open to
+            The &apos;Spin the Wheel&apos; game and Prize Draw (“Promotion”) is open to
             all delegates who perform transaction with Atome attending the
             Sephora CNY event at Sephora Fahrenheit 88, Kuala Lumpur between
-            10am and 10pm (local time) on Tuesday 12th & 13th February 2022.
+            10am and 10pm (local time) on Tuesday 12th & 13th February 2022.
           </li>
           <li>
             Only one entry per person is permitted and all entrants must be aged
@@ -28,7 +28,7 @@ const Terms = () => {
           </li>
           <li>
             All entrants, in order to be eligible to enter the Promotion must
-            show their Atome’s transaction to the BA who manage the Digital
+            show their Atome&apos;s transaction to the BA who manage the Digital
             Screen engagement located at the activation designated booth/stall.
           </li>
           <li>The Promotion is with T&C applied.</li>
@@ -71,7 +71,7 @@ const Terms = () => {
           </li>
           <li>
             Personal data supplied during the course of this promotion will only
-            be processed as set out in the Promoter’s Privacy Policy.
+            be processed as set out in the Promoter&apos;s Privacy Policy.
           </li>
         </ol>
       </div>

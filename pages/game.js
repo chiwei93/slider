@@ -16,7 +16,7 @@ const Game = () => {
         </div>
 
         <p className={styles.heading}>Are you ready?</p>
-        <p className={styles.subHeading}>(There's no turning back)</p>
+        <p className={styles.subHeading}>(There&apos;s no turning back)</p>
 
         <div className={styles.btnContainer}>
           <Link href="/start">
