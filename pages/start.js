@@ -34,7 +34,7 @@ const Start = () => {
 
   // for adding slides when the currentSlide changes
   useEffect(() => {
-    // after the animation exceed or equal to the total animation time specified
+    // after the animation exceed or equal to the total animation time specified, navigate to a random prize page
     if (currentSlide >= totalAnimationTime / slidingTimeForSlide) {
       navigateToPrizePage();
     }
