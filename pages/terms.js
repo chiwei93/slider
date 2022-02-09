@@ -43,7 +43,7 @@ const Terms = () => {
           </li>
           <li>
             All prizes for all winners are non-exchangeable, non-transferable
-            and no cash alternative is offered.
+            and no cash alternative is offered and while stock last.
           </li>
           <li>
             The decision of the BA regarding any aspect of the Promotion is

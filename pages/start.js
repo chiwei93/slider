@@ -19,12 +19,55 @@ const Start = () => {
 
   // for navigating to a random prize page
   const navigateToPrizePage = useCallback(() => {
-    // generate a random number from the length of the prizes
-    const totalPrizes = prizesData.length;
+    // create a distribution array with items of the correct probability
+    const distribution = [];
 
-    const randomNumber = Math.floor(Math.random() * totalPrizes) + 1;
+    for (let i = 0; i < prizesData.length; i++) {
+      const eachPrizeTotal = Math.floor(prizesData[i].prob * 100);
 
-    router.push(`/prizes/${randomNumber}`);
+      for (let j = 0; j < eachPrizeTotal; j++) {
+        distribution.push(prizesData[i]);
+      }
+    }
+
+    const totalPrizes = distribution.length;
+
+    // generate a random index from the distribution array
+    const randomIndex = Math.floor(Math.random() * totalPrizes);
+
+    // get the id of the element at that index
+    const id = distribution[randomIndex].id;
+
+    // let result = [
+    //   0, 0, 0, 0, 0, 0, 0
+    // ];
+
+    // const testDis = [];
+
+    // for (let i = 0; i < prizesData.length; i++) {
+    //   const eachPrizeTotal = Math.floor(prizesData[i].prob * 100);
+
+    //   for (let j = 0; j < eachPrizeTotal; j++) {
+    //     testDis.push(prizesData[i]);
+    //   }
+    // }
+
+    // for (let i = 0; i < 1000; i++) {
+
+    //   const testTotal = testDis.length;
+
+    //   // generate a random index from the testDis array
+    //   const testIndex = Math.floor(Math.random() * testTotal);
+
+    //   // get the id of the element at that index
+    //   const testId = testDis[testIndex].id;
+
+    //   result[testId - 1]++;
+    // }
+
+    // console.log(result);
+
+    router.push(`/prizes/${id}`);
   }, [router]);
 
   // for setting an interval to increase the currentSlide every 200ms
