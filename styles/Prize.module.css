@@ -21,7 +21,6 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  transition: transform 200ms;
 }
 
 .btnContainer {

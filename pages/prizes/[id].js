@@ -11,6 +11,8 @@ const Prize = () => {
   const router = useRouter();
   const { id } = router.query;
 
+  const transitionTime = 200;
+
   // ref for the container for the css transition group
   const divElement = useRef(null);
 
@@ -35,14 +37,17 @@ const Prize = () => {
     <div className={styles.outerContainer}>
       <CSSTransition
         in={true}
-        timeout={200}
+        timeout={transitionTime}
         nodeRef={divElement}
         classNames="slide"
         appear
       >
         <div
           className={styles.container}
-          style={{ backgroundImage: `url(${background()})` }}
+          style={{
+            backgroundImage: `url(${background()})`,
+            transition: `transform ${transitionTime}ms`,
+          }}
           ref={divElement}
         >
           <div className={styles.btnContainer}>
