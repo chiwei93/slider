@@ -1,4 +1,4 @@
-.container {
+.outerContainer {
   position: relative;
   max-width: 100vw;
   min-height: 100vh;
@@ -7,13 +7,25 @@
   background-repeat: no-repeat;
   background-position: left top;
   background-size: 100% 100%;
+  background-image: url('../public/images/prize1.png');
+}
+
+.container {
+  position: relative;
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 100% 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  transition: transform 200ms;
 }
 
 .btnContainer {
-	margin-bottom: 9vw;
+  margin-bottom: 9vw;
 }
 
 .btn {
@@ -26,7 +38,7 @@
 }
 
 @media only screen and (min-width: 1000px) {
-	.btnContainer {
-		margin-bottom: 12em;
-	}
+  .btnContainer {
+    margin-bottom: 12em;
+  }
 }
