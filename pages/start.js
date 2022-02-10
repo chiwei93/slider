@@ -13,10 +13,10 @@ const Start = () => {
   const [slowDown, setSlowDown] = useState(false);
 
   // time for the sliding animation for each slide
-  const slidingTimeForSlide = useRef(100);
+  const slidingTimeForSlide = 100;
 
   // time for slow down time for each slide
-  const slowDownSlidingTimeForSlide = useRef(250);
+  const slowDownSlidingTimeForSlide = 200;
 
   // time for the total page sliding animation
   const totalAnimationTime = 5000;
@@ -51,18 +51,21 @@ const Start = () => {
       setCurrentSlide(prevState => {
         return prevState + 1;
       });
-    }, slidingTimeForSlide.current);
+    }, slidingTimeForSlide);
 
     let newInterval;
 
+    // set a timeout to clear the previous interval and add a new interval for slow down effect
     const timeout = setTimeout(() => {
       clearInterval(interval);
+
+      setSlowDown(true);
 
       newInterval = setInterval(() => {
         setCurrentSlide(prevState => {
           return prevState + 1;
         });
-      }, slowDownSlidingTimeForSlide.current);
+      }, slowDownSlidingTimeForSlide);
     }, 3500);
 
     // clear interval and reset the state when the component unmounts
@@ -76,7 +79,7 @@ const Start = () => {
   // for adding slides when the currentSlide changes
   useEffect(() => {
     // after the animation exceed or equal to the total animation time specified, navigate to a random prize page
-    if (currentSlide >= totalAnimationTime / slidingTimeForSlide.current) {
+    if (currentSlide >= totalAnimationTime / slidingTimeForSlide) {
       navigateToPrizePage();
     }
 
@@ -114,9 +117,7 @@ const Start = () => {
             backgroundImage: `url(${prize.url})`,
             transform: `translateY(${translateYPercent}%)`,
             transition: `transform ${
-              slowDown
-                ? slowDownSlidingTimeForSlide.current
-                : slidingTimeForSlide.current
+              slowDown ? slowDownSlidingTimeForSlide : slidingTimeForSlide
             }ms`,
           }}
           key={index}
