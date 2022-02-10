@@ -70,6 +70,7 @@ const Start = () => {
 
     // clear interval and reset the state when the component unmounts
     return () => {
+      clearInterval(interval);
       clearInterval(newInterval);
       clearTimeout(timeout);
       reset();
