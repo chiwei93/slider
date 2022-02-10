@@ -59,13 +59,13 @@ const Start = () => {
     const timeout = setTimeout(() => {
       clearInterval(interval);
 
-      setSlowDown(true);
-
       newInterval = setInterval(() => {
         setCurrentSlide(prevState => {
           return prevState + 1;
         });
       }, slowDownSlidingTimeForSlide);
+
+      setSlowDown(true);
     }, 3500);
 
     // clear interval and reset the state when the component unmounts
