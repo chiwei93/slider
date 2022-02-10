@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import prizesData from '../utils/prizes';
@@ -10,9 +10,13 @@ const Start = () => {
 
   const [currentSlide, setCurrentSlide] = useState(1);
   const [prizes, setPrizes] = useState([...prizesData]);
+  const [slowDown, setSlowDown] = useState(false);
 
   // time for the sliding animation for each slide
-  const slidingTimeForSlide = 200;
+  const slidingTimeForSlide = useRef(100);
+
+  // time for slow down time for each slide
+  const slowDownSlidingTimeForSlide = useRef(250);
 
   // time for the total page sliding animation
   const totalAnimationTime = 5000;
@@ -38,35 +42,6 @@ const Start = () => {
     // get the id of the element at that index
     const id = distribution[randomIndex].id;
 
-    // let result = [
-    //   0, 0, 0, 0, 0, 0, 0
-    // ];
-
-    // const testDis = [];
-
-    // for (let i = 0; i < prizesData.length; i++) {
-    //   const eachPrizeTotal = Math.floor(prizesData[i].prob * 100);
-
-    //   for (let j = 0; j < eachPrizeTotal; j++) {
-    //     testDis.push(prizesData[i]);
-    //   }
-    // }
-
-    // for (let i = 0; i < 1000; i++) {
-
-    //   const testTotal = testDis.length;
-
-    //   // generate a random index from the testDis array
-    //   const testIndex = Math.floor(Math.random() * testTotal);
-
-    //   // get the id of the element at that index
-    //   const testId = testDis[testIndex].id;
-
-    //   result[testId - 1]++;
-    // }
-
-    // console.log(result);
-
     router.push(`/prizes/${id}`);
   }, [router]);
 
@@ -76,11 +51,24 @@ const Start = () => {
       setCurrentSlide(prevState => {
         return prevState + 1;
       });
-    }, 200);
+    }, slidingTimeForSlide.current);
+
+    let newInterval;
+
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
+
+      newInterval = setInterval(() => {
+        setCurrentSlide(prevState => {
+          return prevState + 1;
+        });
+      }, slowDownSlidingTimeForSlide.current);
+    }, 3500);
 
     // clear interval and reset the state when the component unmounts
     return () => {
-      clearInterval(interval);
+      clearInterval(newInterval);
+      clearTimeout(timeout);
       reset();
     };
   }, []);
@@ -88,7 +76,7 @@ const Start = () => {
   // for adding slides when the currentSlide changes
   useEffect(() => {
     // after the animation exceed or equal to the total animation time specified, navigate to a random prize page
-    if (currentSlide >= totalAnimationTime / slidingTimeForSlide) {
+    if (currentSlide >= totalAnimationTime / slidingTimeForSlide.current) {
       navigateToPrizePage();
     }
 
@@ -105,6 +93,7 @@ const Start = () => {
   const reset = () => {
     setCurrentSlide(1);
     setPrizes([...prizesData]);
+    setSlowDown(false);
   };
 
   // for skipping the animation
@@ -124,7 +113,11 @@ const Start = () => {
           style={{
             backgroundImage: `url(${prize.url})`,
             transform: `translateY(${translateYPercent}%)`,
-            transition: `transform ${slidingTimeForSlide}ms`,
+            transition: `transform ${
+              slowDown
+                ? slowDownSlidingTimeForSlide.current
+                : slidingTimeForSlide.current
+            }ms`,
           }}
           key={index}
         ></div>

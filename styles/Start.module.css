@@ -19,12 +19,13 @@
   position: absolute;
   top: 0;
   left: 0;
+  filter: blur(20px);
 }
 
 .btnContainer {
   position: relative;
   z-index: 5;
-	margin-bottom: 9vw;
+  margin-bottom: 9vw;
 }
 
 .btn {
@@ -37,7 +38,7 @@
 }
 
 @media only screen and (min-width: 1000px) {
-	.btnContainer {
-		margin-bottom: 12em;
-	}
+  .btnContainer {
+    margin-bottom: 12em;
+  }
 }
