@@ -16,7 +16,7 @@ const Start = () => {
   const slidingTimeForSlide = 100;
 
   // time for slow down time for each slide
-  const slowDownSlidingTimeForSlide = 200;
+  const slowDownSlidingTimeForSlide = 150;
 
   // time for the total page sliding animation
   const totalAnimationTime = 5000;
