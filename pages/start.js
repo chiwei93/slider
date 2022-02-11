@@ -33,30 +33,20 @@ const Start = () => {
     router.push(`/prizes/${id}`);
   }, [router]);
 
-  // for setting a timeout to navigate to a random prize when the page is mounted
+  // for playing the sound and setting a timeout to navigate to a random prize when the page is mounted
   useEffect(() => {
     const audio = new Audio('/music/SlotMachines.wav');
 
     // play audio
     audio.play();
 
-    // listener for replaying audio
-    const playSound = () => {
-      audio.currentTime = 0;
-      audio.play();
-    };
-
-    // play audio when first audio ends
-    audio.addEventListener('ended', playSound);
-
     const timeout = setTimeout(() => {
       navigateToPrizePage();
     }, 5800);
 
-    // clear timeout when component is unmounted
+    // clear timeout and pause audio and reset the audio time when component is unmounted
     return () => {
       clearTimeout(timeout);
-      audio.removeEventListener('ended', playSound);
       audio.pause();
       audio.currentTime = 0;
     };
