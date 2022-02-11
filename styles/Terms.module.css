@@ -51,10 +51,6 @@
 	height: 13vw;
 }
 
-/* .btnAgree {
-	width: 100%;
-} */
-
 @media only screen and (min-width: 400px) {
 	.list {
 		padding: 2em;

@@ -9,10 +9,6 @@
   height: 52vw;
 }
 
-/* .headline > img {
-  width: 100%;
-} */
-
 .textBold {
   font-family: walsheim-bold;
 }
@@ -50,10 +46,6 @@
   width: min(60%, 40rem);
   height: 13vw;
 }
-
-/* .qrCodeContainer > img {
-  width: 100%;
-} */
 
 @media only screen and (min-width: 1000px) {
   .btnContainer {

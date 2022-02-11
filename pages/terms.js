@@ -81,11 +81,6 @@ const Terms = () => {
         <Link href="/game">
           <a className={styles.btnLink}>
             <Image src="/images/agree.png" alt="agree button" layout="fill" />
-            {/* <img
-              src="/images/agree.png"
-              alt="agree button"
-              className={styles.btnAgree}
-            /> */}
           </a>
         </Link>
       </div>

@@ -14,7 +14,6 @@ const Game = () => {
       <div className={styles.container}>
         <div className={styles.image}>
           <Image src="/images/wheel.png" alt="wheel" layout="fill" />
-          {/* <img src="/images/wheel.png" alt="wheel" /> */}
         </div>
 
         <p className={styles.heading}>Are you ready?</p>
@@ -24,11 +23,6 @@ const Game = () => {
           <Link href="/start">
             <a className={styles.link}>
               <Image src="/images/play.png" alt="play button" layout='fill' />
-              {/* <img
-                src="/images/play.png"
-                alt="play button"
-                className={styles.btn}
-              /> */}
             </a>
           </Link>
         </div>
