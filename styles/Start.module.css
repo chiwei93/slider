@@ -4,9 +4,10 @@
   min-height: 100vh;
   max-height: 100vh;
   overflow-y: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+}
+
+.slideContainer {
+  animation: slide 6s linear forwards;
 }
 
 .innerContainer {
@@ -14,27 +15,53 @@
   max-height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: left bottom;
   background-size: 100% 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition-timing-function: ease-in-out;
+  filter: blur(4px)
 }
 
 .btnContainer {
-  position: relative;
+  position: absolute;
   z-index: 5;
-  margin-bottom: 9vw;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .btn {
   background-color: var(--color-black);
   color: var(--color-white);
-  font-size: max(1.2rem, 5vw);
+  font-size: max(1.2rem, 4.8vw);
   font-family: walsheim-bold;
   padding: 0.5em 1.5em;
   border-radius: 0.3em;
+}
+
+@keyframes slide {
+  50% {
+    background-color: red;
+    transform: translateY(-65%);
+  }
+
+  60% {
+    transform: translateY(-85%);
+  }
+
+  70% {
+    transform: translateY(-90%);
+  }
+
+  80% {
+    transform: translateY(-94%);
+  }
+
+  90% {
+    transform: translateY(-96%);
+  }
+
+  100% {
+    transform: translateY(-98%);
+  }
 }
 
 @media only screen and (min-width: 1000px) {

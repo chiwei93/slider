@@ -1,25 +1,13 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 import prizesData from '../utils/prizes';
+import startPrizes from '../utils/startPrizes';
 
 import styles from '../styles/Start.module.css';
 
 const Start = () => {
   const router = useRouter();
-
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const [prizes, setPrizes] = useState([...prizesData]);
-  const [slowDown, setSlowDown] = useState(false);
-
-  // time for the sliding animation for each slide
-  const slidingTimeForSlide = 100;
-
-  // time for slow down time for each slide
-  const slowDownSlidingTimeForSlide = 450;
-
-  // time for the total page sliding animation
-  const totalAnimationTime = 5000;
 
   // for navigating to a random prize page
   const navigateToPrizePage = useCallback(() => {
@@ -45,60 +33,17 @@ const Start = () => {
     router.push(`/prizes/${id}`);
   }, [router]);
 
-  // for setting an interval to increase the currentSlide every 200ms
+  // for setting a timeout to navigate to a random prize when the page is mounted
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(prevState => {
-        return prevState + 1;
-      });
-    }, slidingTimeForSlide);
-
-    let newInterval;
-
-    // set a timeout to clear the previous interval and add a new interval for slow down effect
     const timeout = setTimeout(() => {
-      clearInterval(interval);
-
-      newInterval = setInterval(() => {
-        setCurrentSlide(prevState => {
-          return prevState + 1;
-        });
-      }, slowDownSlidingTimeForSlide);
-
-      setSlowDown(true);
-    }, 3500);
-
-    // clear interval and reset the state when the component unmounts
-    return () => {
-      clearInterval(interval);
-      clearInterval(newInterval);
-      clearTimeout(timeout);
-      reset();
-    };
-  }, []);
-
-  // for adding slides when the currentSlide changes
-  useEffect(() => {
-    // after the animation exceed or equal to the total animation time specified, navigate to a random prize page
-    if (currentSlide >= totalAnimationTime / slidingTimeForSlide) {
       navigateToPrizePage();
-    }
+    }, 5800);
 
-    // add the appropriate slide at the end of the array to make it seem infinite
-    setPrizes(prevState => {
-      const index = currentSlide - 1;
-      const copy = [...prevState, prevState[index]];
-
-      return copy;
-    });
-  }, [currentSlide, router, navigateToPrizePage]);
-
-  // for reseting the state
-  const reset = () => {
-    setCurrentSlide(1);
-    setPrizes([...prizesData]);
-    setSlowDown(false);
-  };
+    // clear timeout when component is unmounted
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [navigateToPrizePage]);
 
   // for skipping the animation
   const onSkipAnimationBtnClick = () => {
@@ -107,19 +52,12 @@ const Start = () => {
 
   // for rendering the prizes
   const prizesSections = () => {
-    return prizes.map((prize, index) => {
-      // calculate the translate percent for the y-axis
-      const translateYPercent = (index + 1 - currentSlide) * 100;
-
+    return startPrizes.map((prize, index) => {
       return (
         <div
           className={styles.innerContainer}
           style={{
             backgroundImage: `url(${prize.url})`,
-            transform: `translateY(${translateYPercent}%)`,
-            transition: `transform ${
-              slowDown ? slowDownSlidingTimeForSlide : slidingTimeForSlide
-            }ms`,
           }}
           key={index}
         ></div>
@@ -129,7 +67,7 @@ const Start = () => {
 
   return (
     <div className={styles.outerContainer}>
-      {prizesSections()}
+      <div className={styles.slideContainer}>{prizesSections()}</div>
       <div className={styles.btnContainer}>
         <button className={styles.btn} onClick={onSkipAnimationBtnClick}>
           Skip Animation
