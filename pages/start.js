@@ -35,6 +35,15 @@ const Start = () => {
 
   // for setting a timeout to navigate to a random prize when the page is mounted
   useEffect(() => {
+    const audio = new Audio('/music/SlotMachines.wav');
+
+    audio.play();
+
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+
     const timeout = setTimeout(() => {
       navigateToPrizePage();
     }, 5800);
@@ -42,6 +51,8 @@ const Start = () => {
     // clear timeout when component is unmounted
     return () => {
       clearTimeout(timeout);
+      audio.pause();
+      audio.currentTime = 0;
     };
   }, [navigateToPrizePage]);
 

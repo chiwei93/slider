@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -10,6 +11,17 @@ const Prize = () => {
 
   // for getting the prize id
   const { id } = router.query;
+
+  useEffect(() => {
+    const audio = new Audio('/music/Reveal.wav');
+
+    audio.play();
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   // if the page is reloaded
   if (!id) {
@@ -38,7 +50,7 @@ const Prize = () => {
       >
         <div className={styles.btnContainer}>
           <Link href="/">
-            <a className={styles.btn}>RESTART</a>
+            <a className={styles.btn}>GO BACK</a>
           </Link>
         </div>
       </div>

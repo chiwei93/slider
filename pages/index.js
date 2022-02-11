@@ -21,7 +21,12 @@ export default function Home() {
 
       <div className={styles.content}>
         <div className={styles.headline}>
-          <Image src="/images/title.png" alt="headline" layout="fill" />
+          <Image
+            src="/images/title.png"
+            alt="headline"
+            layout="fill"
+            priority={true}
+          />
         </div>
 
         <p className={`${styles.subHeading} ${styles.textBold}`}>
@@ -45,7 +50,12 @@ export default function Home() {
 
       <div className={styles.downloadContainer}>
         <div className={styles.qrCodeContainer}>
-          <Image src='/images/qr.png' alt='qr code' layout='fill' />
+          <Image
+            src="/images/qr.png"
+            alt="qr code"
+            layout="fill"
+            priority={true}
+          />
         </div>
       </div>
     </Container>
