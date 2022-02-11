@@ -37,12 +37,17 @@ const Start = () => {
   useEffect(() => {
     const audio = new Audio('/music/SlotMachines.wav');
 
+    // play audio
     audio.play();
 
-    audio.addEventListener('ended', () => {
+    // listener for replaying audio
+    const playSound = () => {
       audio.currentTime = 0;
       audio.play();
-    });
+    };
+
+    // play audio when first audio ends
+    audio.addEventListener('ended', playSound);
 
     const timeout = setTimeout(() => {
       navigateToPrizePage();
@@ -51,6 +56,7 @@ const Start = () => {
     // clear timeout when component is unmounted
     return () => {
       clearTimeout(timeout);
+      audio.removeEventListener('ended', playSound);
       audio.pause();
       audio.currentTime = 0;
     };
