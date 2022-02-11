@@ -11,7 +11,7 @@ const Prize = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const transitionTime = 200;
+  const transitionTime = 400;
 
   // ref for the container for the css transition group
   const divElement = useRef(null);
