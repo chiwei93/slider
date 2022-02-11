@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Header from '../components/header/header';
 import Container from '../components/container/container';
@@ -12,7 +13,8 @@ const Game = () => {
 
       <div className={styles.container}>
         <div className={styles.image}>
-          <img src="/images/wheel.png" alt="wheel" />
+          <Image src="/images/wheel.png" alt="wheel" layout="fill" />
+          {/* <img src="/images/wheel.png" alt="wheel" /> */}
         </div>
 
         <p className={styles.heading}>Are you ready?</p>
@@ -21,11 +23,12 @@ const Game = () => {
         <div className={styles.btnContainer}>
           <Link href="/start">
             <a className={styles.link}>
-              <img
+              <Image src="/images/play.png" alt="play button" layout='fill' />
+              {/* <img
                 src="/images/play.png"
                 alt="play button"
                 className={styles.btn}
-              />
+              /> */}
             </a>
           </Link>
         </div>

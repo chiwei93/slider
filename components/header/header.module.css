@@ -2,13 +2,16 @@
   padding: 4em 0;
   display: flex;
 	justify-content: center;
+	position: relative;
 }
 
 .logoContainer {
 	position: relative;
 	text-align: center;
+	width: 70%;
+	height: 4.5vw;
 }
 
-.logoContainer > img {
+/* .logoContainer > img {
 	width: 70%;
-}
+} */

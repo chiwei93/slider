@@ -46,13 +46,14 @@
 }
 
 .btnLink {
-	width: min(60%, 30rem);
 	position: relative;
+	width: min(60%, 30rem);
+	height: 13vw;
 }
 
-.btnAgree {
+/* .btnAgree {
 	width: 100%;
-}
+} */
 
 @media only screen and (min-width: 400px) {
 	.list {

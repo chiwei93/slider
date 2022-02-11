@@ -9,13 +9,15 @@
 .image {
   position: relative;
   margin-bottom: 1em;
-	width: 100%;
+	/* width: 100%; */
 	text-align: center;
+  width: min(40%, 25rem);
+  height: 35vw;
 }
 
-.image > img {
+/* .image > img {
 	width: min(40%, 25rem);
-}
+} */
 
 .heading {
   font-weight: bold;
@@ -39,8 +41,9 @@
 .link {
 	width: min(50%, 28rem);
 	position: relative;
+  height: 12vw;
 }
 
-.btn {
+/* .btn {
 	width: 100%;
-}
+} */

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Header from '../components/header/header';
 import Container from '../components/container/container';
@@ -17,9 +18,9 @@ const Terms = () => {
       <div className={styles.listContainer}>
         <ol className={styles.list}>
           <li>
-            The &apos;Spin the Wheel&apos; game and Prize Draw (“Promotion”) is open to
-            all delegates who perform transaction with Atome attending the
-            Sephora CNY event at Sephora Fahrenheit 88, Kuala Lumpur between
+            The &apos;Spin the Wheel&apos; game and Prize Draw (“Promotion”) is
+            open to all delegates who perform transaction with Atome attending
+            the Sephora CNY event at Sephora Fahrenheit 88, Kuala Lumpur between
             10am and 10pm (local time) on Tuesday 12th & 13th February 2022.
           </li>
           <li>
@@ -79,11 +80,12 @@ const Terms = () => {
       <div className={styles.btnContainer}>
         <Link href="/game">
           <a className={styles.btnLink}>
-            <img
+            <Image src="/images/agree.png" alt="agree button" layout="fill" />
+            {/* <img
               src="/images/agree.png"
               alt="agree button"
               className={styles.btnAgree}
-            />
+            /> */}
           </a>
         </Link>
       </div>

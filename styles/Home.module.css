@@ -1,14 +1,17 @@
 .content {
   flex: 1;
+  position: relative;
 }
 
 .headline {
   position: relative;
+  width: 100%;
+  height: 52vw;
 }
 
-.headline > img {
+/* .headline > img {
   width: 100%;
-}
+} */
 
 .textBold {
   font-family: walsheim-bold;
@@ -32,7 +35,7 @@
   background-color: var(--color-black);
   padding: 0.5em 1em;
   margin-left: 2em;
-  border-radius: .3em;
+  border-radius: 0.3em;
 }
 
 .downloadContainer {
@@ -45,11 +48,12 @@
 .qrCodeContainer {
   position: relative;
   width: min(60%, 40rem);
+  height: 13vw;
 }
 
-.qrCodeContainer > img {
+/* .qrCodeContainer > img {
   width: 100%;
-}
+} */
 
 @media only screen and (min-width: 1000px) {
   .btnContainer {
