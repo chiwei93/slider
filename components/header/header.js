@@ -6,7 +6,12 @@ const Header = () => {
   return (
     <header className={styles.container}>
       <div className={styles.logoContainer}>
-        <Image src="/images/logo.png" alt="logo" layout="fill" />
+        <Image
+          src="/images/6ixty/logo.png"
+          alt="logo"
+          layout="fill"
+          priority={true}
+        />
       </div>
     </header>
   );

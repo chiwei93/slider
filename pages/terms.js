@@ -18,14 +18,11 @@ const Terms = () => {
       <div className={styles.listContainer}>
         <ol className={styles.list}>
           <li>
-            The &apos;Spin the Wheel&apos; game and Prize Draw (“Promotion”) is
-            open to all delegates who perform transaction with Atome attending
-            the Sephora CNY event at Sephora Fahrenheit 88, Kuala Lumpur between
-            10am and 10pm (local time) on Tuesday 12th & 13th February 2022.
+            The &apos;Spin the Wheel&apos; game and Prize Draw(&#8220;Promotion&#8221;) is open to all delegates who perform transaction with Atome attending to the 6IXTY8IGHT at Lalaport, Kuala Lumpur between 10am and 10pm (local MY time) from 27th February 2022 to 8th March 2022.
           </li>
           <li>
             Only one entry per person is permitted and all entrants must be aged
-            18 years.
+            18 years and above.
           </li>
           <li>
             All entrants, in order to be eligible to enter the Promotion must
@@ -39,12 +36,12 @@ const Terms = () => {
             and lands on the segment of the Wheel indicating they are eligible
             to win a prize. Players will win the prize corresponding to the
             prize stated on that segment on the Wheel. There will be
-            approximately 300 prizes in total and available to win, throughout
-            the duration of the event for 2 days.
+            approximately 200 prizes in total and available to win, throughout
+            the duration of the event for 10 days.
           </li>
           <li>
             All prizes for all winners are non-exchangeable, non-transferable
-            and no cash alternative is offered and while stock last.
+            and no cash alternative is offered and while stocks last.
           </li>
           <li>
             The decision of the BA regarding any aspect of the Promotion is
@@ -53,19 +50,19 @@ const Terms = () => {
           </li>
           <li>
             Participants are deemed to have accepted and agreed to be bound by
-            these terms and conditions upon entry and the BA reserves the right
+            these terms and conditions upon entry and the Atome&apos;s BA reserves the right
             to amend these terms and conditions at any time.
           </li>
           <li>
-            The BA reserves the right to refuse entry, or refuse to award any of
+            Atome&apos;s BA reserves the right to refuse entry, or refuse to award any of
             the prizes to anyone in breach of these terms and conditions.
           </li>
           <li>
-            The BA reserves the right to hold void, cancel, suspend, or amend
+            Atome&apos;s BA reserves the right to hold void, cancel, suspend, or amend
             the promotion where it becomes necessary to do so.
           </li>
           <li>
-            The BA accepts no responsibility for entries not successfully
+            Atome&apos;s BA accepts no responsibility for entries not successfully
             completed due to a technical fault technical malfunction, computer
             hardware or software failure, satellite, network or server failure
             of any kind whatsoever.

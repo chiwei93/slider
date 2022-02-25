@@ -28,7 +28,7 @@ const Prize = () => {
     return (
       <div
         className={styles.container}
-        style={{ backgroundImage: `url('/images/dashed.png')` }}
+        style={{ backgroundImage: `url('/images/6ixty/dashed.png')` }}
       ></div>
     );
   }

@@ -2,7 +2,7 @@ import styles from './container.module.css';
 
 const Container = ({
   children,
-  background = '/images/dashed.png',
+  background = '/images/6ixty/dashed.png',
   onClick,
 }) => {
   return (

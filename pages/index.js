@@ -16,13 +16,13 @@ export default function Home() {
   };
 
   return (
-    <Container background="/images/home.png" onClick={onPageClick}>
+    <Container background="/images/6ixty/home.png" onClick={onPageClick}>
       <Header />
 
       <div className={styles.content}>
         <div className={styles.headline}>
           <Image
-            src="/images/title.png"
+            src="/images/6ixty/title.png"
             alt="headline"
             layout="fill"
             priority={true}
